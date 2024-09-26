@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp">
+
+    <ImageView
+        android:id="@+id/imageView_company_item_logo"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="4dp"
+        android:scaleType="fitXY"
+        android:contentDescription="@string/production_company"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.013"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/textview_company_item_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        style="?attr/textAppearanceTitleMedium"
+        android:text="@string/textview_company_item_label"
+        app:layout_constraintStart_toEndOf="@+id/imageView_company_item_logo"
+        app:layout_constraintTop_toTopOf="@+id/imageView_company_item_logo" />
+
+    <TextView
+        android:id="@+id/textview_company_item_country"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/textview_company_item_country_label"
+        app:layout_constraintStart_toStartOf="@+id/textview_company_item_title"
+        app:layout_constraintTop_toBottomOf="@+id/textview_company_item_title" />
+</androidx.constraintlayout.widget.ConstraintLayout>

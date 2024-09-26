@@ -1,0 +1,59 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.App16_MovieAppCapstone" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Primary branding color -->
+        <item name="colorPrimary">@color/primaryColor</item>
+        <item name="colorPrimaryVariant">@color/primaryColorVariant</item>
+        <item name="colorOnPrimary">@android:color/white</item>
+
+        <!-- Secondary branding color -->
+        <item name="colorSecondary">@color/secondaryColor</item>
+        <item name="colorSecondaryVariant">@color/secondaryDarkColor</item>
+        <item name="colorOnSecondary">@android:color/white</item>
+
+        <!-- Background color -->
+        <item name="android:colorBackground">@color/backgroundColor</item>
+        <item name="colorSurface">@color/backgroundColor</item>
+        <item name="colorOnBackground">@android:color/black</item>
+        <item name="colorOnSurface">@android:color/black</item>
+
+        <!-- Customize other theme attributes here -->
+<!--        <item name="android:statusBarColor">@color/primaryDarkColor</item>-->
+    </style>
+
+    <style name="Theme.App16_MovieAppCapstone" parent="Base.Theme.App16_MovieAppCapstone" />
+
+    <style name="Widget.App16_MovieAppCapstone.RatingBar" parent="Widget.AppCompat.RatingBar.Small">
+        <item name="android:colorControlActivated">@color/rating_color</item>
+    </style>
+
+<!--  set status bar style transparent  -->
+    <style name="Theme.App16_MovieAppCapstone.StatusBar.Transparent" parent="Theme.App16_MovieAppCapstone">
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+    </style>
+
+<!--    Bottom Navigation -->
+    <style name="Widget.MyApp.BottomNavigationView" parent="Widget.Material3.BottomNavigationView">
+        <!-- Background Color -->
+        <item name="itemBackground">@color/bottom_nav_background_color</item>
+
+        <!-- Ripple Effect -->
+        <item name="itemRippleColor">@color/bottom_nav_ripple_color</item>
+
+        <!-- Icon Color -->
+        <item name="itemIconTint">@color/bottom_nav_item_color</item>
+
+        <!-- Label Text Color -->
+        <item name="itemTextColor">@color/bottom_nav_item_color</item>
+
+        <!-- Active Indicator -->
+        <item name="itemActiveIndicatorStyle">@style/BottomNavActiveIndicator</item>
+    </style>
+
+    <!-- Active Indicator Style -->
+    <style name="BottomNavActiveIndicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">@color/bottom_nav_active_indicator_color</item>
+    </style>
+
+</resources>

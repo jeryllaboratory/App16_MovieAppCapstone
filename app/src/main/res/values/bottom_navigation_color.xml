@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Active Color -->
+    <color name="bottom_nav_active_color">#E51937</color>
+
+    <color name="bottom_nav_inactive_color">#8A8A8A</color> <!-- A neutral grey -->
+
+    <color name="bottom_nav_background_color">#6FFFF3F5</color> <!-- White background for light theme -->
+
+    <color name="bottom_nav_ripple_color">#29E51937</color> <!-- Active ripple with alpha transparency -->
+
+    <color name="bottom_nav_badge_background_color">#E51937</color>
+
+    <color name="bottom_nav_badge_text_color">#FFFFFF</color>
+
+    <color name="bottom_nav_active_indicator_color">#F8DDE1</color>
+</resources>

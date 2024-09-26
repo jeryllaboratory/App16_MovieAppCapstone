@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ViewFlipper xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:id="@+id/viewflipper_favorite_movie">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_movies_now_showing"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:itemCount="10"
+        tools:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        tools:layout_editor_absoluteY="16dp"
+        tools:listitem="@layout/view_item_movie"
+        tools:orientation="vertical"
+        tools:scrollbars="vertical"
+        tools:spanCount="2"
+        android:fitsSystemWindows="true"
+        android:clipToPadding="false"
+        android:paddingBottom="100dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+        
+        <include
+            android:id="@+id/view_empty_component"
+            layout="@layout/view_empty_component" />
+
+        <ProgressBar
+            android:id="@+id/progressbar_favorite_movie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"/>
+        
+    </ViewFlipper>
+

@@ -1,0 +1,14 @@
+<resources>
+    <string name="core_name">Core</string>
+
+    <string name="movie_description_label">Movie Description</string>
+    <string name="movie_title_label">Movie Title</string>
+    <string name="textview_company_item_country_label">textview_company_item_country_label</string>
+    <string name="production_company">Production Company</string>
+    <string name="textview_company_item_label">textview_company_item_label</string>
+    <string name="movie_item_description">
+        Language : %1$s - : %2$s
+    </string>
+    <string name="original_language">EN</string>
+    <string name="movie_image_item">View Item Movie</string>
+</resources>
