@@ -19,6 +19,7 @@ import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import java.net.URI
 import java.util.concurrent.TimeUnit
 
 
@@ -57,7 +58,7 @@ val authInterceptor = Interceptor { chain ->
 
     val networkModule = module {
         single {
-            val hostname = "api.themoviedb.org"
+            val hostname = URI(ApiConstant.BASE_URL).host
             val certificatePinner = CertificatePinner.Builder()
                 .add(hostname, "sha256/k1Hdw5sdSn5kh/gemLVSQD/P4i4IBQEY1tW4WNxh9XM=")
                 .add(hostname, "sha256/18tkPyr2nckv4fgo0dhAkaUtJ2hu2831xlO2SKhq8dg=")
