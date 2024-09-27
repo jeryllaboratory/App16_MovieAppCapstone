@@ -2,6 +2,7 @@ package com.jeryl.app16_movieappcapstone.feature.detail
 
 import android.os.Bundle
 import android.widget.Toast
+import androidx.activity.addCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
@@ -24,20 +25,16 @@ class DetailMovieActivity : AppCompatActivity() {
         passIntent()
     }
 
-
-    private fun initView(){
+    private fun initView() {
         val navHostFragment = supportFragmentManager.findFragmentById(
             R.id.detail_nav_host_fragment
         ) as NavHostFragment
         navController = navHostFragment.navController
 
-        observeNavElements(binding, navController)
+        observeNavElements(navController)
     }
 
-    private fun observeNavElements(
-        binding: ActivityDetailMovieBinding,
-        navController: NavController
-    ) {
+    private fun observeNavElements(navController: NavController) {
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
                 R.id.detailMovieFragment -> {
@@ -50,35 +47,40 @@ class DetailMovieActivity : AppCompatActivity() {
         }
     }
 
-    private fun passIntent(){
-        val movie = intent.getIntExtra(EXTRA_MOVIE,0)
+    private fun passIntent() {
+        val movie = intent.getIntExtra(EXTRA_MOVIE, 0)
         val movieIdFromDeepLink = intent?.data?.lastPathSegment?.toIntOrNull()
 
-        val fragment = DetailMovieFragment().apply {
-
-            arguments = Bundle().apply {
-                if(movieIdFromDeepLink != null){
-                    putInt(EXTRA_MOVIE, movieIdFromDeepLink)
-                }else if (movie != 0) {
-                    putInt(EXTRA_MOVIE, movie)
-                } else {
-                    finish()
-                    Toast.makeText(this@DetailMovieActivity, "Invalid movie ID", Toast.LENGTH_SHORT).show()
-                }
+        val movieId = movieIdFromDeepLink ?: movie
+        if (movieId != 0) {
+            val bundle = Bundle().apply {
+                putInt(EXTRA_MOVIE, movieId)
             }
+            // Use NavController to navigate to the fragment with the movie ID as an argument
+            navController.navigate(R.id.detailMovieFragment, bundle)
+        } else {
+            finish()
+            Toast.makeText(this, "Invalid movie ID", Toast.LENGTH_SHORT).show()
         }
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.detail_nav_host_fragment, fragment)
-            .commit()
     }
 
     override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp(appBarConfiguration)
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+
+        // Cleanup NavController and binding
+        _binding = null
+
+        // Remove NavHostFragment manually to avoid memory leak
+        supportFragmentManager.findFragmentById(R.id.detail_nav_host_fragment)?.let {
+            supportFragmentManager.beginTransaction().remove(it).commitAllowingStateLoss()
+        }
+    }
 
     companion object {
         const val EXTRA_MOVIE = "extra_movie"
     }
-
 }

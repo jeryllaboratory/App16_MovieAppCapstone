@@ -34,4 +34,7 @@ dependencies {
     implementation(libs.androidx.navigation.ui.ktx)
     implementation(libs.androidx.navigation.dynamic.features.fragment.v260)
 
+    debugImplementation (libs.leakcanary.android)
+
+
 }

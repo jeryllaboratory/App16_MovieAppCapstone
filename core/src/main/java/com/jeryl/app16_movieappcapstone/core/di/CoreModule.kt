@@ -9,6 +9,8 @@ import com.jeryl.app16_movieappcapstone.core.data.source.remote.network.ApiConst
 import com.jeryl.app16_movieappcapstone.core.data.source.remote.network.ApiService
 import com.jeryl.app16_movieappcapstone.core.domain.repository.IMovieRepository
 import com.jeryl.app16_movieappcapstone.core.utils.AppExecutors
+import net.sqlcipher.database.SQLiteDatabase
+import net.sqlcipher.database.SupportFactory
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -28,10 +30,13 @@ import java.util.concurrent.TimeUnit
 val databaseModule = module {
     factory { get<MovieDatabase>().movieDao() }
     single {
+        val passphrase: ByteArray = SQLiteDatabase.getBytes("jerylmovie".toCharArray())
+        val factory = SupportFactory(passphrase)
         Room.databaseBuilder(
             androidContext(),
             MovieDatabase::class.java, "Movie.db"
-        ).fallbackToDestructiveMigration().build()
+        ).fallbackToDestructiveMigration()
+            .openHelperFactory(factory).build()
     }
 }
 

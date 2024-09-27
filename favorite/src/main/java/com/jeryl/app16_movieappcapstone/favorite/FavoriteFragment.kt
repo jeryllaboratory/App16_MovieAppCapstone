@@ -60,4 +60,13 @@ class FavoriteFragment : Fragment() {
         binding.rvMoviesNowShowing.adapter = movieAdapter
 
     }
+
+
+    override fun onDestroyView() {
+        binding.viewflipperFavoriteMovie.stopFlipping()
+        _binding = null
+        super.onDestroyView()
+
+    }
+
 }

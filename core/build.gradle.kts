@@ -83,5 +83,9 @@ dependencies {
     implementation(libs.koin.core)
     implementation(libs.koin.android)
     implementation("io.insert-koin:koin-androidx-viewmodel:2.1.6")
+
+    //Encrypt
+    implementation(libs.android.database.sqlcipher)
+    implementation(libs.androidx.sqlite.ktx)
 }
 
