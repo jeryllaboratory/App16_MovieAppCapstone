@@ -2,7 +2,6 @@ package com.jeryl.app16_movieappcapstone.core.data.source.remote.response
 
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
-import com.jeryl.app16_movieappcapstone.core.data.source.remote.network.ApiConstant.BASE_URL_IMAGE
 import kotlinx.parcelize.Parcelize
 
 @Parcelize

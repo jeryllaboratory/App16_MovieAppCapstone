@@ -39,5 +39,7 @@
     <string name="title_search">Search</string>
     <string name="title_favorite">Fovorite</string>
     <string name="please_install_the_module_first">Please install the module first</string>
+    <string name="notification_permission_granted">Notification granted</string>
+    <string name="notification_permission_denied">Notification Permission Denied</string>
 
 </resources>

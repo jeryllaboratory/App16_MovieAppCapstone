@@ -121,9 +121,9 @@ class MainActivity : AppCompatActivity() {
         when (requestCode) {
             REQUEST_NOTIFICATION_PERMISSION -> {
                 if ((grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED)) {
-                    // Permission granted, proceed with notification
+                    Snackbar.make(binding.root, getString(R.string.notification_permission_granted), Snackbar.LENGTH_SHORT).show()
                 } else {
-                    // Permission denied, handle gracefully
+                    Snackbar.make(binding.root, getString(R.string.notification_permission_denied), Snackbar.LENGTH_SHORT).show()
                 }
             }
         }

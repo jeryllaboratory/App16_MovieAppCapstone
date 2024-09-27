@@ -9,7 +9,7 @@ import com.jeryl.app16_movieappcapstone.core.BuildConfig
  */
 
 object ApiConstant {
-    val BASE_URL: String = BuildConfig.BASE_URL
-    val ACCESS_TOKEN: String = BuildConfig.ACCESS_TOKEN
-    val BASE_URL_IMAGE: String = BuildConfig.BASE_URL_IMAGE
+    const val BASE_URL: String = BuildConfig.BASE_URL
+    const val ACCESS_TOKEN: String = BuildConfig.ACCESS_TOKEN
+    const val BASE_URL_IMAGE: String = BuildConfig.BASE_URL_IMAGE
 }

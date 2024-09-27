@@ -13,10 +13,10 @@ import com.jeryl.app16_movieappcapstone.core.domain.model.ProductionCompaniesIte
  */
 
 class ProductionCompanyAdapter(private val companies: List<ProductionCompaniesItem>) : RecyclerView.Adapter<ProductionCompanyAdapter.ListViewHolder>() {
-    private lateinit var OnItemClickCallback: OnItemClickListener
+    private lateinit var onItemClickListener: OnItemClickListener
 
     fun setOnItemClickCallback(onItemClickCallback: OnItemClickListener) {
-        this.OnItemClickCallback = onItemClickCallback
+        this.onItemClickListener = onItemClickCallback
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {
@@ -35,7 +35,7 @@ class ProductionCompanyAdapter(private val companies: List<ProductionCompaniesIt
             textviewCompanyItemCountry.text = company.originCountry
         }
         holder.itemView.setOnClickListener {
-            OnItemClickCallback.onItemClicked(company)
+            onItemClickListener.onItemClicked(company)
         }
     }
 

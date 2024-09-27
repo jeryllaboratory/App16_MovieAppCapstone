@@ -1,6 +1,5 @@
 package com.jeryl.app16_movieappcapstone.core.domain.repository
 
-import androidx.lifecycle.LiveData
 import com.jeryl.app16_movieappcapstone.core.data.ResourceState
 import com.jeryl.app16_movieappcapstone.core.domain.model.MovieDetailModel
 import com.jeryl.app16_movieappcapstone.core.domain.model.MovieModel

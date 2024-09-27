@@ -2,7 +2,6 @@ package com.jeryl.app16_movieappcapstone.core.data.source.remote.network
 
 import com.jeryl.app16_movieappcapstone.core.data.source.remote.response.MovieDetailResponse
 import com.jeryl.app16_movieappcapstone.core.data.source.remote.response.MovieListPopularResponse
-import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query

@@ -20,10 +20,10 @@ import com.jeryl.app16_movieappcapstone.core.domain.model.MovieModel
  */
 
 class PopularMovieAdapter(private val popularMovies: List<MovieModel>) : RecyclerView.Adapter<PopularMovieAdapter.ListViewHolder>() {
-    private lateinit var OnItemClickCallback: OnItemClickListener
+    private lateinit var onItemClickListener: OnItemClickListener
 
     fun setOnItemClickCallback(onItemClickCallback: OnItemClickListener) {
-        this.OnItemClickCallback = onItemClickCallback
+        this.onItemClickListener = onItemClickCallback
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {
@@ -31,7 +31,7 @@ class PopularMovieAdapter(private val popularMovies: List<MovieModel>) : Recycle
         return ListViewHolder(binding)
     }
 
-    inner class ListViewHolder(var binding: ViewItemMovieBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class ListViewHolder(private var binding: ViewItemMovieBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(movie: MovieModel) {
             val rating = movie.voteAverage / 2
             with(binding){
@@ -66,7 +66,7 @@ class PopularMovieAdapter(private val popularMovies: List<MovieModel>) : Recycle
         val movie = popularMovies[position]
         holder.bind(movie)
         holder.itemView.setOnClickListener {
-            OnItemClickCallback.onItemClicked(movie)
+            onItemClickListener.onItemClicked(movie)
         }
     }
 

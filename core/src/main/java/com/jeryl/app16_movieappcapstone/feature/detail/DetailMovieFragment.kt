@@ -31,6 +31,7 @@ import com.jeryl.app16_movieappcapstone.core.domain.model.ProductionCompaniesIte
 import com.jeryl.app16_movieappcapstone.core.ui.ProductionCompanyAdapter
 import com.jeryl.app16_movieappcapstone.feature.detail.DetailMovieActivity.Companion.EXTRA_MOVIE
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import kotlin.math.abs
 
 
 class DetailMovieFragment : Fragment(), AppBarLayout.OnOffsetChangedListener {
@@ -110,7 +111,7 @@ class DetailMovieFragment : Fragment(), AppBarLayout.OnOffsetChangedListener {
             maxScrollSize = appBarLayout?.totalScrollRange ?: 0
         }
 
-        val percentage = Math.abs(verticalOffset).toFloat() / maxScrollSize
+        val percentage = abs(verticalOffset).toFloat() / maxScrollSize
         val scale = 1f - percentage * 0.7f
         binding.ivPoster.applyScaleAndAlpha(scale, scale)
 
