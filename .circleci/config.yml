@@ -7,10 +7,15 @@ jobs:
   build:
     docker:
       - image: cimg/android:2024.09
+    working_directory: ~/project
+
     steps:
       - checkout
+      - run:
+          name: List Project Files
+          command: ls -la ~/project
       - restore_cache:
-          key: android-orb-v1-{{ checksum "build.gradle" }}-{{ checksum "app/build.gradle" }}
+          key: android-orb-v1-{{ checksum "app/build.gradle" }}-{{ checksum "core/build.gradle" }}-{{ checksum "search/build.gradle" }}-{{ checksum "favorite/build.gradle" }}
       - run:
           name: Chmod permissions
           command: chmod +x ./gradlew
@@ -24,7 +29,7 @@ jobs:
           name: Download Dependencies
           command: ./gradlew androidDependencies
       - save_cache:
-          key: android-orb-v1-{{ checksum "build.gradle" }}-{{ checksum "app/build.gradle" }}
+          key: android-orb-v1-{{ checksum "app/build.gradle" }}-{{ checksum "core/build.gradle" }}-{{ checksum "search/build.gradle" }}-{{ checksum "favorite/build.gradle" }}
           paths:
             - ~/.android/build-cache
             - ~/.gradle/caches
@@ -46,6 +51,6 @@ jobs:
           destination: favorite-debug-apk
 
 workflows:
-  build_and_test:
+  build:
     jobs:
       - build
