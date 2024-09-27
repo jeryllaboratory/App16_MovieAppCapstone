@@ -11,4 +11,21 @@
     </string>
     <string name="original_language">EN</string>
     <string name="movie_image_item">View Item Movie</string>
+    <string name="todo">TODO</string>
+    <string name="play_button">play button</string>
+    <string name="title_dummy_label">John Wick 3: Parabellum</string>
+    <string name="runtime_dummy_label">2hr 10m</string>
+    <string name="genres_dummy">Action, Crime, Thriller</string>
+    <string name="rating_text">4.6/5</string>
+    <string name="add_to_favorite_label">Add to Favorite</string>
+    <string name="synopsis">Synopsis</string>
+    <string name="dummy_overview">In this third installment of the adrenaline-fueled action franchise, super-assassin John Wick returns with a $14 million price tag on his head and an army of bounty-hunting…</string>
+    <string name="release_date_label">Release Date :</string>
+    <string name="remove_from_favorite_label">Remove from favorite</string>
+    <string name="rating_text_label"> %1$.1f/%2$d</string>
+
+
+
+
+
 </resources>

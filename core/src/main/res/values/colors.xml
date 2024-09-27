@@ -4,9 +4,34 @@
     <color name="white">#FFFFFFFF</color>
 
     <!-- Primary colors -->
+
+
+
+
+    <!-- Primary colors -->
     <color name="primaryColor">#E51937</color>
     <color name="primaryColorVariant">#C91229</color>
 
+    <!-- Secondary color -->
+    <color name="secondaryColor">#FFA000</color>
     <color name="rating_color">#FFA000</color>
+
+
+    <!-- Background color -->
+    <color name="buttonBackgroundColor">#E8FDED</color>
+    <!-- Background color -->
+    <color name="backgroundColor">#fff</color>
+
+    <!-- Additional colors (optional) -->
+    <color name="primaryLightColor">#7DF39A</color> <!-- Lighter version of primary -->
+    <color name="successColor">#4CAF50</color> <!-- Lighter version of primary -->
+    <color name="primaryDarkColor">#1BA744</color> <!-- Darker version of primary -->
+    <color name="secondaryLightColor">#7DF39A</color> <!-- Lighter version of secondary -->
+    <color name="secondaryDarkColor">#1BA744</color>
+    <color name="red">#BC0404</color>
+    <color name="light_blue_50">#FFE1F5FE</color>
+    <color name="light_blue_200">#FF81D4FA</color>
+    <color name="light_blue_600">#FF039BE5</color>
+    <color name="light_blue_900">#FF01579B</color> <!-- Darker version of secondary -->
 
 </resources>

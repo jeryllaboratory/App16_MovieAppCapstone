@@ -7,12 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
+import com.jeryl.app16_movieappcapstone.feature.detail.DetailMovieActivity
 import com.jeryl.app16_movieappcapstone.core.domain.model.MovieModel
 import com.jeryl.app16_movieappcapstone.core.ui.PopularMovieAdapter
 import com.jeryl.app16_movieappcapstone.favorite.databinding.FragmentFavoriteBinding
 import com.jeryl.app16_movieappcapstone.favorite.di.favoriteModule
-import com.jeryl.app16_movieappcapstone.feature.detail.DetailMovieActivity
-import com.jeryl.app16_movieappcapstone.feature.detail.DetailMovieActivity.Companion.EXTRA_MOVIE
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.context.loadKoinModules
 
@@ -52,7 +51,7 @@ class FavoriteFragment : Fragment() {
         movieAdapter.setOnItemClickCallback(object : PopularMovieAdapter.OnItemClickListener {
             override fun onItemClicked(data: MovieModel) {
                 val intent = Intent(activity, DetailMovieActivity::class.java)
-                intent.putExtra(EXTRA_MOVIE, data.id)
+                intent.putExtra(DetailMovieActivity.EXTRA_MOVIE, data.id)
                 startActivity(intent)
             }
         })

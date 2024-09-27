@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/detail_nav"
+    app:startDestination="@id/detailMovieFragment">
+
+    <fragment
+        android:id="@+id/detailMovieFragment"
+        android:name="com.jeryl.app16_movieappcapstone.feature.detail.DetailMovieFragment"
+        android:label="DetailMovieFragment" />
+</navigation>
