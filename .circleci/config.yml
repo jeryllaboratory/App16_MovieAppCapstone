@@ -15,9 +15,12 @@ jobs:
           name: List Project Files
           command: ls -la ~/project
       - restore_cache:
-          key: android-orb-v1-{{ checksum "app/build.gradle" }}-{{ checksum "core/build.gradle" }}-{{ checksum "search/build.gradle" }}-{{ checksum "favorite/build.gradle" }}
+          key: android-orb-v1-{{ checksum "build.gradle.kts" }}-{{ checksum "app/build.gradle.kts" }}-{{ checksum "core/build.gradle.kts" }}-{{ checksum "search/build.gradle.kts" }}-{{ checksum "favorite/build.gradle.kts" }}
       - run:
-          name: Chmod permissions
+          name: Check Project Structure
+          command: ls -la app core search favorite
+      - run:
+          name: Set up Gradle Wrapper
           command: chmod +x ./gradlew
       - run:
           name: Set up Environment Variables
@@ -29,11 +32,25 @@ jobs:
           name: Download Dependencies
           command: ./gradlew androidDependencies
       - save_cache:
-          key: android-orb-v1-{{ checksum "app/build.gradle" }}-{{ checksum "core/build.gradle" }}-{{ checksum "search/build.gradle" }}-{{ checksum "favorite/build.gradle" }}
+          key: android-orb-v1-{{ checksum "build.gradle.kts" }}-{{ checksum "app/build.gradle.kts" }}-{{ checksum "core/build.gradle.kts" }}-{{ checksum "search/build.gradle.kts" }}-{{ checksum "favorite/build.gradle.kts" }}
           paths:
             - ~/.android/build-cache
             - ~/.gradle/caches
             - ~/.gradle/wrapper
+      - run:
+          name: Run Lint Checks
+          command: ./gradlew lint
+      - run:
+          name: Run Unit Tests
+          command: ./gradlew test
+      - store_test_results:
+          path: app/build/test-results
+      - store_test_results:
+          path: core/build/test-results
+      - store_test_results:
+          path: search/build/test-results
+      - store_test_results:
+          path: favorite/build/test-results
       - run:
           name: Assemble and Build All Modules
           command: ./gradlew :app:assembleDebug :core:assembleDebug :search:assembleDebug :favorite:assembleDebug
