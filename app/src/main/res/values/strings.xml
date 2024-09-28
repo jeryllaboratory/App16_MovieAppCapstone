@@ -41,5 +41,7 @@
     <string name="please_install_the_module_first">Please install the module first</string>
     <string name="notification_permission_granted">Notification granted</string>
     <string name="notification_permission_denied">Notification Permission Denied</string>
+    <string name="update_feature_info">This feature will be available in the next update</string>
+    <string name="missing_configuration">Missing Configuration</string>
 
 </resources>

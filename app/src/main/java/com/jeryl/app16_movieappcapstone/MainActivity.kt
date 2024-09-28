@@ -3,6 +3,7 @@ package com.jeryl.app16_movieappcapstone
 import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
@@ -15,6 +16,7 @@ import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.play.core.splitinstall.SplitInstallManagerFactory
+import com.jeryl.app16_movieappcapstone.core.data.source.remote.network.ApiConstant
 import com.jeryl.app16_movieappcapstone.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -33,6 +35,7 @@ class MainActivity : AppCompatActivity() {
                 ActivityCompat.requestPermissions(this, arrayOf(android.Manifest.permission.POST_NOTIFICATIONS), REQUEST_NOTIFICATION_PERMISSION)
             }
         }
+        checkMissingConfig()
 
     }
 
@@ -127,6 +130,33 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
+    }
+
+    private fun checkMissingConfig() {
+        val missingProperties = mutableListOf<String>()
+
+        if (ApiConstant.ACCESS_TOKEN == "default_access_token") {
+            missingProperties.add("ACCESS_TOKEN")
+        }
+        if (ApiConstant.BASE_URL == "https://default.api.com/") {
+            missingProperties.add("BASE_URL")
+        }
+        if (ApiConstant.BASE_URL_IMAGE == "https://default.image.com/") {
+            missingProperties.add("BASE_URL_IMAGE")
+        }
+
+        if (missingProperties.isNotEmpty()) {
+            showMissingConfigDialog(missingProperties)
+        }
+    }
+
+    private fun showMissingConfigDialog(missingProperties: List<String>) {
+        val message = "The following configuration properties are missing: ${missingProperties.joinToString(", ")}"
+        AlertDialog.Builder(this)
+            .setTitle(getString(R.string.missing_configuration))
+            .setMessage(message)
+            .setPositiveButton("OK") { _, _ -> finish() }
+            .show()
     }
 
     companion object {
