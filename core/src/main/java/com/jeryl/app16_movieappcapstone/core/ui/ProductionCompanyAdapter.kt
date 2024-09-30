@@ -13,11 +13,6 @@ import com.jeryl.app16_movieappcapstone.core.domain.model.ProductionCompaniesIte
  */
 
 class ProductionCompanyAdapter(private val companies: List<ProductionCompaniesItem>) : RecyclerView.Adapter<ProductionCompanyAdapter.ListViewHolder>() {
-    private lateinit var onItemClickListener: OnItemClickListener
-
-    fun setOnItemClickCallback(onItemClickCallback: OnItemClickListener) {
-        this.onItemClickListener = onItemClickCallback
-    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {
         val binding = ViewItemCompanyBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -34,16 +29,10 @@ class ProductionCompanyAdapter(private val companies: List<ProductionCompaniesIt
             textviewCompanyItemTitle.text = company.name
             textviewCompanyItemCountry.text = company.originCountry
         }
-        holder.itemView.setOnClickListener {
-            onItemClickListener.onItemClicked(company)
-        }
     }
 
     override fun getItemCount(): Int  = companies.size
 
-    interface OnItemClickListener {
-        fun onItemClicked(data: ProductionCompaniesItem)
-    }
 
 
 }

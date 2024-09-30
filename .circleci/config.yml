@@ -3,12 +3,15 @@ version: 2.1
 orbs:
   android: circleci/android@2.5.0
 
-jobs:
-  build:
+executors:
+  android-executor:
     docker:
       - image: cimg/android:2024.09
     working_directory: ~/project
 
+jobs:
+  build:
+    executor: android-executor  # Here we refer to the docker image defined in the executor
     steps:
       - checkout
       - run:

@@ -1,4 +1,4 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <!-- Base application theme. -->
     <style name="Widget.App16_MovieAppCapstone.RatingBar" parent="Widget.AppCompat.RatingBar.Small">
         <item name="android:colorControlActivated">@color/rating_color</item>

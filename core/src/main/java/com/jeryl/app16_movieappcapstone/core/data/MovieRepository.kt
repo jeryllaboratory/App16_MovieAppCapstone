@@ -80,6 +80,7 @@ class MovieRepository(
                 emit(ResourceState.Error("Empty response"))
             }
             is ApiResponse.Error -> {
+                Log.e("MovieRepository", "Error fetching movie details: ${apiResponse.errorMessage}")
                 emit(ResourceState.Error(apiResponse.errorMessage))
             }
         }

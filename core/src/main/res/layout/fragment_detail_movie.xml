@@ -49,8 +49,8 @@
 
                 <ImageButton
                     android:id="@+id/button_play"
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
                     android:layout_marginTop="90dp"
                     android:background="@android:color/transparent"
                     android:contentDescription="@string/play_button"
@@ -252,10 +252,10 @@
 
                     <ImageButton
                         android:id="@+id/button_same"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
                         android:background="@android:color/transparent"
-                        android:contentDescription="@string/todo"
+                        android:contentDescription="@string/button_same"
                         android:padding="16dp"
                         android:scaleX="0"
                         android:scaleY="0"
@@ -272,6 +272,7 @@
         android:id="@+id/nestedScrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
         <ViewFlipper
             android:id="@+id/view_flipper_movie_detail"

@@ -1,4 +1,4 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <!-- Base application theme. -->
     <style name="Base.Theme.App16_MovieAppCapstone" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Primary branding color -->

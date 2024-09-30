@@ -1,5 +1,3 @@
-import org.gradle.internal.impldep.bsh.commands.dir
-import java.io.FileInputStream
 import java.util.Properties
 
 plugins {
@@ -42,9 +40,14 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
+        release {
+            isMinifyEnabled = true
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+        }
+
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
@@ -86,7 +89,7 @@ dependencies {
     //    Koin
     implementation(libs.koin.core)
     implementation(libs.koin.android)
-    implementation("io.insert-koin:koin-androidx-viewmodel:2.1.6")
+    implementation(libs.koin.androidx.viewmodel)
 
     //Encrypt
     implementation(libs.android.database.sqlcipher)

@@ -3,6 +3,7 @@ package com.jeryl.app16_movieappcapstone.feature.detail
 import android.graphics.Color
 import android.graphics.drawable.Drawable
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -83,7 +84,7 @@ class DetailMovieFragment : Fragment(), AppBarLayout.OnOffsetChangedListener {
                         binding.viewFlipperMovieDetail.displayedChild = 1
                         displayedChildView(1)
                         binding.buttonFavoriteList.isEnabled = true
-
+                        Log.d("DetailMovieFragment", "onViewCreated: ${response.data}")
                         response.data?.let { detail ->
                             setupData(detail)
                             detail.productionCompanies?.let { companies ->
@@ -178,9 +179,6 @@ class DetailMovieFragment : Fragment(), AppBarLayout.OnOffsetChangedListener {
             layoutManager = LinearLayoutManager(requireContext())
             adapter = movieAdapter
         }
-        movieAdapter.setOnItemClickCallback(object : ProductionCompanyAdapter.OnItemClickListener {
-            override fun onItemClicked(data: ProductionCompaniesItem) {}
-        })
     }
 
     private fun updateFavoriteButton() {

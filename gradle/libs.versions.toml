@@ -1,6 +1,5 @@
 [versions]
 agp = "8.5.0"
-koinAndroidViewmodelVersion = "2.1.6"
 kotlin = "1.9.0"
 coreKtx = "1.13.1"
 junit = "4.13.2"
@@ -20,20 +19,13 @@ androidxPreference = "1.1.1"
 navigationDynamicFeaturesFragmentVersion = "2.6.0"
 room = "2.6.1"
 roomCompiler = "2.5.0"
-paging = "3.1.1"
 retrofit = "2.11.0"
 gsonConverter = "2.9.0"
 loggingInterceptor = "4.9.2"
 glide = "4.15.1"
 glideCompiler = "4.13.0"
-kspVersion = "1.7.20"
-navigationSafeArgsGradlePlugin = "2.8.0"
 koinCore = "2.1.6"
 koinAndroid = "2.1.6"
-koinAndroidViewmodel = "2.1.6"
-navigationFragmentKtx = "2.8.1"
-navigationUiKtx = "2.8.1"
-navigationDynamicFeaturesFragment = "2.8.1"
 
 androidDatabaseSqlcipher = "4.5.4"
 sqliteKtx = "2.4.0"
@@ -45,6 +37,7 @@ junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+
 koin-androidx-viewmodel = { module = "io.insert-koin:koin-androidx-viewmodel", version.ref = "koinCore" }
 leakcanary-android = { module = "com.squareup.leakcanary:leakcanary-android", version.ref = "leakcanaryAndroid" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
@@ -69,17 +62,9 @@ androidx-datastore-preferences = { module = "androidx.datastore:datastore-prefer
 androidx-preference-ktx = { module = "androidx.preference:preference-ktx", version.ref = "androidxPreference" }
 androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "room" }
 androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "room" }
-androidx-room-paging = { module = "androidx.room:room-paging", version.ref = "room" }
 room-compiler = { module = "androidx.room:room-compiler", version.ref = "roomCompiler" }
-
-androidx-paging-runtime-ktx = { module = "androidx.paging:paging-runtime-ktx", version.ref = "paging" }
-androidx-navigation-safe-args-gradle-plugin = { group = "androidx.navigation", name = "navigation-safe-args-gradle-plugin", version.ref = "navigationSafeArgsGradlePlugin" }
 koin-core = { group = "io.insert-koin", name = "koin-core", version.ref = "koinCore" }
 koin-android = { group = "io.insert-koin", name = "koin-android", version.ref = "koinAndroid" }
-koin-android-viewmodel = { group = "io.insert-koin", name = "koin-android-viewmodel", version.ref = "koinAndroidViewmodel" }
-navigation-fragment-ktx = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "navigationFragmentKtx" }
-navigation-ui-ktx = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navigationUiKtx" }
-androidx-navigation-dynamic-features-fragment = { group = "androidx.navigation", name = "navigation-dynamic-features-fragment", version.ref = "navigationDynamicFeaturesFragment" }
 
 android-database-sqlcipher = { module = "net.zetetic:android-database-sqlcipher", version.ref = "androidDatabaseSqlcipher" }
 androidx-sqlite-ktx = { module = "androidx.sqlite:sqlite-ktx", version.ref = "sqliteKtx" }
